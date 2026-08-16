@@ -7,10 +7,22 @@ body_classes: page-home
   <div class="container">
     <div class="row">
       <div class="col-12">
+
         {% include framework/heading.html
         title=page.title
         description=page.description
         %}
+
+        {% if page.intro_paragraph %}
+        <p class="home-intro-paragraph">
+          {{ page.intro_paragraph }}
+        </p>
+        {% endif %}
+
+        <div class="home-content">
+          {{ content }}
+        </div>
+
       </div>
     </div>
   </div>
@@ -63,16 +75,16 @@ body_classes: page-home
 </div>
 {% endif %}
 
-{% assign cards = site.posts | sort: 'date' | reverse %}
+<!-- {% assign cards = site.posts | sort: 'date' | reverse %}
 {% assign limit = page.posts.limit | default: 3 %}
 {% assign sort_by = page.posts.sort | default: 'date' %}
 {% assign columns =  page.posts.columns | default: 3 %}
 {% capture columns %}col-lg-{{ 12 | divided_by:columns }}{% endcapture %}
 {% if sort_by == 'weight' %}
   {% assign cards = cards | sort: 'weight' %}
-{% endif %}
+{% endif %} -->
 
-{% assign cards = site.posts %}
+<!-- {% assign cards = site.posts %}
 {% if cards.size > 0 %}
 <div class="section section-base-bg-2">
   <div class="container">
@@ -103,9 +115,9 @@ body_classes: page-home
     </div>
   </div>
 </div>
-{% endif %}
+{% endif %} -->
 
-{% if site.newsletter.mailchimp.form_action_url and site.newsletter.mailchimp.form_action_url != '' %}
+<!-- {% if site.newsletter.mailchimp.form_action_url and site.newsletter.mailchimp.form_action_url != '' %}
   <div class="section section-base-bg-2">
     <div class="container">
       <div class="row">
@@ -115,4 +127,4 @@ body_classes: page-home
       </div>
     </div>
   </div>
-{% endif %}
+{% endif %} -->

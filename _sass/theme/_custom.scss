@@ -1,10 +1,79 @@
+// GLOBAL STUFF
 .heading .heading-heading h1 {
-    font-size: 86px;
+    font-size: 70px;
     line-height: 1;
-    width: 80%;
+    //width: 80%;
     letter-spacing: -2px;
     font-weight: 700;
     strong {
         text-decoration-color: var(--color-base-bg-3);
+    }
+}
+
+// affects headings only on home page
+.page-home .heading {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+// more padding for all pages
+.container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+// less padding on phones or smaller screens
+@media (max-width: 767px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+a {
+    text-decoration: underline;
+}
+
+h5 {
+    margin-top: 20px;
+}
+
+// HOME PAGE STUFF
+.home-intro-paragraph {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.home-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-size: 16px;
+
+    ul {
+        list-style: none;
+        padding-left: 30px;
+    }
+
+    @media (max-width: 767px) {
+        ul {
+            padding-left: 10px;
+        }
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 20px;
+    }
+
+    ul li::before {
+        content: "•";
+        position: absolute;
+        left: 0px;
     }
 }
